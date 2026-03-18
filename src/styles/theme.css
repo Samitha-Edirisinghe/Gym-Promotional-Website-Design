@@ -1,0 +1,203 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  
+  /* Gym Brand Colors */
+  --gold: #d5a310;
+  --dark-brown: #292113;
+  --deep-black: #040304;
+  --charcoal: #2c2c2c;
+  --soft-light: #f1f0eb;
+  
+  --background: #040304;
+  --foreground: #f1f0eb;
+  --card: #292113;
+  --card-foreground: #f1f0eb;
+  --popover: #292113;
+  --popover-foreground: #f1f0eb;
+  --primary: #d5a310;
+  --primary-foreground: #040304;
+  --secondary: #2c2c2c;
+  --secondary-foreground: #f1f0eb;
+  --muted: #2c2c2c;
+  --muted-foreground: #a3a3a3;
+  --accent: #d5a310;
+  --accent-foreground: #040304;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(213, 163, 16, 0.2);
+  --input: rgba(213, 163, 16, 0.3);
+  --input-background: #292113;
+  --switch-background: #2c2c2c;
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+  --ring: #d5a310;
+  --chart-1: #d5a310;
+  --chart-2: #292113;
+  --chart-3: #2c2c2c;
+  --chart-4: #f1f0eb;
+  --chart-5: #040304;
+  --radius: 0.5rem;
+  --sidebar: #292113;
+  --sidebar-foreground: #f1f0eb;
+  --sidebar-primary: #d5a310;
+  --sidebar-primary-foreground: #040304;
+  --sidebar-accent: #2c2c2c;
+  --sidebar-accent-foreground: #f1f0eb;
+  --sidebar-border: rgba(213, 163, 16, 0.2);
+  --sidebar-ring: #d5a310;
+}
+
+.dark {
+  --background: #040304;
+  --foreground: #f1f0eb;
+  --card: #292113;
+  --card-foreground: #f1f0eb;
+  --popover: #292113;
+  --popover-foreground: #f1f0eb;
+  --primary: #d5a310;
+  --primary-foreground: #040304;
+  --secondary: #2c2c2c;
+  --secondary-foreground: #f1f0eb;
+  --muted: #2c2c2c;
+  --muted-foreground: #a3a3a3;
+  --accent: #d5a310;
+  --accent-foreground: #040304;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(213, 163, 16, 0.2);
+  --input: rgba(213, 163, 16, 0.3);
+  --ring: #d5a310;
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+  --chart-1: #d5a310;
+  --chart-2: #292113;
+  --chart-3: #2c2c2c;
+  --chart-4: #f1f0eb;
+  --chart-5: #040304;
+  --sidebar: #292113;
+  --sidebar-foreground: #f1f0eb;
+  --sidebar-primary: #d5a310;
+  --sidebar-primary-foreground: #040304;
+  --sidebar-accent: #2c2c2c;
+  --sidebar-accent-foreground: #f1f0eb;
+  --sidebar-border: rgba(213, 163, 16, 0.2);
+  --sidebar-ring: #d5a310;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+  }
+}
