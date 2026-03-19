@@ -274,10 +274,10 @@ export function Navbar() {
                     <Menu className="h-6 w-6" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className={`w-[300px] border-[#d5a310]/20 ${
+                <SheetContent side="right" className={`w-[300px] border-[#d5a310]/20 p-6 ${
                   theme === 'dark' ? 'bg-[#040304]' : 'bg-[#f1f0eb]'
                 }`}>
-                  <div className="flex flex-col space-y-6 mt-8">
+                  <div className="flex flex-col space-y-6 pt-12">
                     {navLinks.map((link) => (
                       <a
                         key={link.name}
